@@ -37,6 +37,7 @@ namespace DailyPlanner
             else
             {
                 Console.WriteLine("Invalid task index");
+                //error
             }
         }
 
