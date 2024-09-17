@@ -44,9 +44,9 @@ namespace DailyPlanner
                         planning.RemoveTask(taskNameToRemove);
                         break;
                     case "complete":
-                        Console.WriteLine("Enter task index:");
-                        int taskIndex = int.Parse(Console.ReadLine());
-                        planning.CompleteTask(taskIndex);
+                        Console.WriteLine("Enter task name:");
+                        string taskNameToComplete = Console.ReadLine();
+                        planning.CompleteTask(taskNameToComplete);
                         break;
                     case "print":
                         planning.PrintTasks();

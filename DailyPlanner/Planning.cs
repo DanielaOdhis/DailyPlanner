@@ -26,20 +26,21 @@ namespace DailyPlanner
             tasks.RemoveAll(t => t.TaskName == taskName);
             SaveTasks();
         }
-
-        public void CompleteTask(int taskIndex)
+        //can we complete task with taskname instead
+        public void CompleteTask(string taskName)
         {
-            if (taskIndex >= 0 && taskIndex < tasks.Count)
+            Tasks task = tasks.Find(t => t.TaskName == taskName);
+            if (task != null)
             {
-                tasks[taskIndex].CompleteTask();
+                task.CompleteTask();
                 SaveTasks();
             }
             else
             {
-                Console.WriteLine("Invalid task index");
-                //error
+                Console.WriteLine("Task not found");
             }
         }
+       
 
         public void PrintTasks()
         {
